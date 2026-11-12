@@ -1,0 +1,11 @@
+name: Run C Matrix Program
+on: [push]
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile C Code
+        run: gcc matrix.c -o matrix
+      - name: Run Program & Show Output
+        run: ./matrix < input.txt
